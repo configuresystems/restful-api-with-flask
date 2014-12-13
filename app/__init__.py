@@ -1,13 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 
 # instantiate Flask so that we may use it!
 app = Flask(__name__)
 
-# this is our index route, found here
-# DEFAULT: http://[hostname]:5000/hello-world
+# Set our application constants via a config.py object
+app.config.from_object('config.DevConfiguration')
 
-
-@app.route('/hello-world')
-def index():
-    return jsonify({"message": "Hello World!"})
+from app import views

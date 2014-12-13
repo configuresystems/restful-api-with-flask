@@ -1,12 +1,15 @@
 RESTful API with Flask and Flask-Testing
 ================
 
-##### Version: 0.1
+##### Version: 0.2
 
 # Overview
 
 Part 1:  We will install Flask and create "Hello World" response to
 ensure our environment is built and configured properly.
+
+Part 2:  Start structuring our framework, creating our GET endpoints,
+and creating new unittests to ensure our changes dont break anything
 
 # Requirements
 
@@ -38,7 +41,7 @@ python-virtualenv
 
 ```bash
 # The next three lines are one command
-git clone -b part-1 \
+git clone -b part-2 \
 https://github.com/configuresystems/restful-api-with-flask.git \
 application
 # Next command
@@ -51,11 +54,10 @@ pip install -r requirements.txt
 Run tests to ensure its all working well
 
 ```bash
-python -m unittest discover
-#### Output should look like so
-#.
+#python -m unittest discover
+#..
 #----------------------------------------------------------------------
-#Ran 1 test in 0.009s
+#Ran 2 tests in 0.015s
 #
 #OK
 ```
@@ -72,18 +74,53 @@ python run.py
 
 |  HTTP Method | Response|  URI |  Action |
 | :-----------:|:--:| :--- | :------ |
-| GET | JSON | http://[hostname]/hello-world | Retrieve "Hello World" |
+| GET | JSON | http://[hostname]/todo/api/v1.0/tasks | Retrieve a list of our tasks |
+| GET | JSON | http://[hostname]/todo/api/v1.0/tasks/<int:id> | Retrieve a task by ID |
+
+### Get All Tasks
 
 ```bash
-curl -i http://[hostname]/hello-world:5000
+curl -i http://[hostname]/todo/api/v1.0/tasks
 HTTP/1.0 200 OK
 Content-Type: application/json
-Content-Length: 32
+Content-Length: 390
 Server: Werkzeug/0.9.6 Python/2.7.6
-Date: Sat, 13 Dec 2014 01:02:35 GMT
+Date: Sat, 13 Dec 2014 05:36:09 GMT
 
 {
-      "message": "Hello World!"
+  "tasks": [
+    {
+      "description": "Write unittests to valid!",
+      "done": false,
+      "title": "Test Sample Data",
+      "uri": "http://[hostname]:5000/todo/api/v1.0/tasks/1"
+    },
+    {
+      "description": "Write a PUT method",
+      "done": false,
+      "title": "Learn how to update entries",
+      "uri": "http://[hostname]:5000/todo/api/v1.0/tasks/2"
+    }
+  ]
 }
 ```
 
+### Get Single Task
+
+```bash
+curl -i http://[hostname]:5000/todo/api/v1.0/tasks/1
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 181
+Server: Werkzeug/0.9.6 Python/2.7.6
+Date: Sat, 13 Dec 2014 05:36:36 GMT
+
+{
+  "task": {
+    "description": "Write unittests to valid!",
+    "done": false,
+    "title": "Test Sample Data",
+    "uri": "http://[hostname]:5000/todo/api/v1.0/tasks/1"
+  }
+}
+```
