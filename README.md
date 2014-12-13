@@ -11,6 +11,9 @@ ensure our environment is built and configured properly.
 Part 2:  Start structuring our framework, creating our GET endpoints,
 and creating new unittests to ensure our changes dont break anything
 
+Part 3:  Conjure methods for submitting new tasks, updating tasks, and
+deleting tasks
+
 # Requirements
 
 Aptitude Packages:
@@ -41,7 +44,7 @@ python-virtualenv
 
 ```bash
 # The next three lines are one command
-git clone -b part-2 \
+git clone -b part-3 \
 https://github.com/configuresystems/restful-api-with-flask.git \
 application
 # Next command
@@ -76,6 +79,9 @@ python run.py
 | :-----------:|:--:| :--- | :------ |
 | GET | JSON | http://[hostname]:5000/todo/api/v1.0/tasks | Retrieve a list of our tasks |
 | GET | JSON | http://[hostname]:5000/todo/api/v1.0/tasks/<int:id> | Retrieve a task by ID |
+| POST | JSON | http://[hostname]:5000/todo/api/v1.0/tasks | Create a new task |
+| PUT | JSON | http://[hostname]:5000/todo/api/v1.0/tasks/<int:id> | Update task by id |
+| DELETE | JSON | http://[hostname]:5000/todo/api/v1.0/tasks/<int:id> | Delete task by id |
 
 ### Get All Tasks
 

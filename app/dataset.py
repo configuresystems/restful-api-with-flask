@@ -32,3 +32,14 @@ class DataSet():
             'done': False
             }]
         return self.data
+
+    def add(self, data_set):
+        """Method for adding a new task to the list
+        id = int
+        title = string
+        description = string
+        done = bool"""
+        self.data.append(data_set)
+
+    def empty():
+        self.data = []

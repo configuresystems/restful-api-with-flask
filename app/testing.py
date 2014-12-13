@@ -1,6 +1,7 @@
 from flask.ext.testing import TestCase
 from flask import url_for
 from app import app, views
+from app.dataset import DataSet
 
 
 class BaseTestCase(TestCase):
@@ -11,3 +12,13 @@ class BaseTestCase(TestCase):
         as testing, in case we build verbose functions or something"""
         app.config.from_object('config.TestingConfiguration')
         return app
+
+    def setUp(self):
+        with self.client:
+            response = self.client.delete(url_for('reset_task'))
+            self.assert200(response)
+
+    def tearDown(self):
+        with self.client:
+            response = self.client.delete(url_for('reset_task'))
+            self.assert200(response)
