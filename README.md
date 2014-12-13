@@ -74,13 +74,13 @@ python run.py
 
 |  HTTP Method | Response|  URI |  Action |
 | :-----------:|:--:| :--- | :------ |
-| GET | JSON | http://[hostname]/todo/api/v1.0/tasks | Retrieve a list of our tasks |
-| GET | JSON | http://[hostname]/todo/api/v1.0/tasks/<int:id> | Retrieve a task by ID |
+| GET | JSON | http://[hostname]:5000/todo/api/v1.0/tasks | Retrieve a list of our tasks |
+| GET | JSON | http://[hostname]:5000/todo/api/v1.0/tasks/<int:id> | Retrieve a task by ID |
 
 ### Get All Tasks
 
 ```bash
-curl -i http://[hostname]/todo/api/v1.0/tasks
+curl -i http://[hostname]:5000/todo/api/v1.0/tasks
 HTTP/1.0 200 OK
 Content-Type: application/json
 Content-Length: 390
