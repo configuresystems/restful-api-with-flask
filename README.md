@@ -1,7 +1,7 @@
 RESTful API with Flask and Flask-Testing
 ================
 
-##### Version: Url Shortener BETA 0.1
+##### Version: 0.1
 
 # Overview
 
@@ -38,7 +38,7 @@ python-virtualenv
 
 ```bash
 # The next three lines are one command
-git clone -b p1-hello-world \
+git clone -b part-1 \
 https://github.com/configuresystems/restful-api-with-flask.git \
 application
 # Next command
