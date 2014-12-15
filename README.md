@@ -23,6 +23,28 @@ Required PIP package, also in the requirements.txt
 - Flask==0.10.1
 - Flask-Testing==0.4.2
 
+# Project Directory Structure
+
+```base
+├── app
+│   ├── __init__.py
+│   └── testing.py
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── run.py
+```
+
+### Line count
+
+2 ./requirements.txt
+20 ./LICENSE
+89 ./README.md
+8 ./run.py
+13 ./app/__init__.py
+27 ./app/testing.py
+159 total
+
 # Installation
 
 ### Ubuntu
