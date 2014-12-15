@@ -29,6 +29,45 @@ Required PIP package, also in the requirements.txt
 - Flask==0.10.1
 - Flask-Testing==0.4.2
 
+# Project Directory Structure
+
+```bash
+├── app
+│   ├── dataset.py
+│   ├── __init__.py
+│   ├── modules
+│   │   ├── __init__.py
+│   │   └── todo
+│   │       ├── __init__.py
+│   │       ├── tests.py
+│   │       └── views.py
+│   ├── testing.py
+│   └── views.py
+├── config.py
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── run.py
+```
+
+### Line Count
+
+```bash
+20 ./LICENSE
+39 ./config.py
+132 ./README.md
+8 ./run.py
+0 ./app/modules/__init__.py
+112 ./app/modules/todo/tests.py
+0 ./app/modules/todo/__init__.py
+98 ./app/modules/todo/views.py
+11 ./app/__init__.py
+24 ./app/testing.py
+3 ./app/views.py
+45 ./app/dataset.py
+494 total
+```
+
 # Installation
 
 ### Ubuntu
