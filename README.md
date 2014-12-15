@@ -97,9 +97,9 @@ Run tests to ensure its all working well
 
 ```bash
 python -m unittest discover
-#..
+#.....
 #----------------------------------------------------------------------
-#Ran 2 tests in 0.015s
+#Ran 5 tests in 0.030s
 #
 #OK
 ```
