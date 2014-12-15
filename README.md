@@ -96,10 +96,10 @@ python run.py
 
 |  HTTP Method | Response|  URI |  Action |
 | :-----------:|:--:| :--- | :------ |
-| GET | JSON | http://[hostname]/hello-world | Retrieve "Hello World" |
+| GET | JSON | http://[hostname]:5000/hello-world | Retrieve "Hello World" |
 
 ```bash
-curl -i http://[hostname]/hello-world:5000
+curl -i http://[hostname]:5000/hello-world
 HTTP/1.0 200 OK
 Content-Type: application/json
 Content-Length: 32
