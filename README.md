@@ -37,6 +37,7 @@ Required PIP package, also in the requirements.txt
 
 ### Line count
 
+```bash
 2 ./requirements.txt
 20 ./LICENSE
 89 ./README.md
@@ -44,6 +45,7 @@ Required PIP package, also in the requirements.txt
 13 ./app/__init__.py
 27 ./app/testing.py
 159 total
+```
 
 # Installation
 
