@@ -28,6 +28,44 @@ Required PIP package, also in the requirements.txt
 
 # Installation
 
+```bash
+├── app
+│   ├── dataset.py
+│   ├── __init__.py
+│   ├── modules
+│   │   ├── __init__.py
+│   │   └── todo
+│   │       ├── __init__.py
+│   │       ├── tests.py
+│   │       └── views.py
+│   ├── testing.py
+│   └── views.py
+├── config.py
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── run.py
+```
+
+### Line Count
+
+```bash
+2 ./requirements.txt
+20 ./LICENSE
+39 ./config.py
+126 ./README.md
+8 ./run.py
+0 ./app/modules/__init__.py
+22 ./app/modules/todo/tests.py
+0 ./app/modules/todo/__init__.py
+44 ./app/modules/todo/views.py
+11 ./app/__init__.py
+13 ./app/testing.py
+3 ./app/views.py
+34 ./app/dataset.py
+322 total
+```
+
 ### Ubuntu
 
 ```bash
