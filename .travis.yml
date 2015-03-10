@@ -37,9 +37,8 @@ script:
     && (echo 'Java is installed: pass' && exit 0)
     || (echo 'Java is installed: fail' && exit 1)
 
-  # Make sure Kibana is accessible
+  # Make sure tests pass
   - >
-    curl -s http://localhost:80
-    | grep -q 'KIBANA_VERSION'
-    && (echo 'Kibana is accessible: pass' && exit 0)
-    || (echo 'Kibana is accessible: fail' && exit 1)
+    /home/restful/application/flask/bin/python -m unittest discover
+    && (echo 'Tests passing: pass' && exit 0)
+    || (echo 'Tests passing: fail' && exit 1)
