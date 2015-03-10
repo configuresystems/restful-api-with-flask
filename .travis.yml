@@ -19,14 +19,14 @@ install:
 script:
   # Check the role/playbook's syntax.
 
-  - ansible-playbook -i inventory/tests $SITE --syntax-check
+  - ansible-playbook -i inventory/test $SITE --syntax-check
 
   # Run the role/playbook with ansible-playbook.
-  - ansible-playbook -i inventory/tests $SITE --connection=local --sudo -vvv
+  - ansible-playbook -i inventory/test $SITE --connection=local --sudo -vvv
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
-    ansible-playbook -i inventory/tests $SITE --connection=local --sudo -vvv
+    ansible-playbook -i inventory/test $SITE --connection=local --sudo -vvv
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
