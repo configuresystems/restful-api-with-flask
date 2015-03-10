@@ -9,7 +9,3 @@
   notify: apache restart
   tags:
     - initial
-
-- name:
-  template: src=wsgi.apache2.vhost.j2
-            dest=/etc/apache2/sites-enabled/000-default
