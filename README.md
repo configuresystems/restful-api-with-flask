@@ -3,7 +3,12 @@ RESTful API with Flask and Flask-Testing
 
 [![Build Status](https://travis-ci.org/configuresystems/restful-api-with-flask.svg)](https://travis-ci.org/configuresystems/restful-api-with-flask)
 
-##### Version: 0.3
+##### Version: 0.3b
+
+An Ansible deployment that pulls the 'part-3' branch, create the environment, and tests the applications unittests.  Integrated with travis ci.
+
+The base code is based on https://github.com/miguelgrinberg/REST-tutorial .  I restructured it to fit a platform framework and created unittests
+to ensure all functions executed as expected for ease of deployment and continuous integration.
 
 # Overview
 
