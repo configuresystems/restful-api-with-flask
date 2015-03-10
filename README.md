@@ -1,6 +1,8 @@
 RESTful API with Flask and Flask-Testing
 ================
 
+[![Build Status](https://travis-ci.org/configuresystems/restful-api-with-flask.svg)](https://travis-ci.org/configuresystems/restful-api-with-flask)
+
 ##### Version: 0.3
 
 # Overview
