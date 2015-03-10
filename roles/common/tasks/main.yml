@@ -1,0 +1,17 @@
+---
+
+- name: set hostname
+  hostname: name={{ inventory_hostname }}
+
+- name: install common packages
+  apt: name={{ item }}
+       state=latest
+       update_cache=yes
+  with_items:
+    - git
+    - vim
+    - python-dev
+    - build-essential
+    - python-setuptools
+    - python-virtualenv
+    - libcurl4-openssl-dev

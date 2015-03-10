@@ -1,0 +1,11 @@
+---
+- name: copy github repository
+  git: repo={{ git_url }}
+       dest={{ git_dest }}
+       accept_hostkey=yes
+       recursive=yes
+       version={{ git_version }}
+  sudo: yes
+  sudo_user: "{{ username }}"
+  tags:
+    - initial

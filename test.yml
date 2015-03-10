@@ -1,0 +1,16 @@
+---
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - username: ivr
+    - git_url: https://github.com/configuresystems/restful-api-with-flask.git
+    - git_dest: /home/{{ username }}/application
+    - git_version: part-3
+  roles:
+    - common
+    - user
+    - apache
+    - git
+    - flask
+    - config

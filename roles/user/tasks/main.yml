@@ -1,0 +1,49 @@
+---
+
+- name: create user
+  user: name={{ username }}
+        comment="Python User"
+        shell=/bin/bash
+        state=present
+        generate_ssh_key=yes
+        ssh_key_bits=2048
+        ssh_key_file=.ssh/ansible_rsa
+  tags:
+    - initial
+    - user
+
+- name: copy ssh keys
+  copy: src={{ item.src }}
+        dest=/home/{{ username }}/.ssh/{{ item.src }}
+        mode={{ item.mode }}
+        owner={{ username }}
+        group={{ username }}
+  with_items:
+    - { 'src': 'id_rsa', 'mode': '0600' }
+    - { 'src': 'id_rsa.pub', 'mode': '0644' }
+  tags:
+    - initial
+    - user
+
+- name: copy vim files
+  copy: src={{ item.src }}
+        dest=/home/{{ username }}
+        owner={{ username }}
+        group={{ username }}
+  with_items:
+    - { 'src': '.vimrc', 'mode': '0644', 'directory': no }
+    - { 'src': '.vim', 'mode': '0755', 'directory': yes }
+    - { 'src': '.bashrc', 'mode': '0644', 'directory': no }
+  tags:
+    - initial
+    - vim
+    - user
+       
+- name: add to sudoers list
+  lineinfile: dest=/etc/sudoers.d/{{ username }}
+              state=present
+              create=yes
+              line="{{ username }}   ALL=(ALL) NOPASSWD:ALL"
+  tags:
+    - initial
+    - sudo

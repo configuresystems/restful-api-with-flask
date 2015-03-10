@@ -1,0 +1,15 @@
+---
+
+- name: install apache packages
+  apt: name={{ item }}
+       update_cache=yes
+  with_items:
+    - apache2
+    - libapache2-mod-wsgi
+  notify: apache restart
+  tags:
+    - initial
+
+- name:
+  template: src=wsgi.apache2.vhost.j2
+            dest=/etc/apache2/sites-enabled/000-default

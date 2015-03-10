@@ -1,0 +1,23 @@
+---
+
+- name: copy app.wsgi
+  template: src=app.wsgi.j2
+            dest={{ git_dest }}/app.wsgi
+            owner={{ username }}
+            group={{ username }}
+  sudo: yes
+  sudo_user: "{{ username }}"
+  tags:
+    - initial
+    - configs
+  notify: apache restart
+
+- name: copy virtualhost
+  template: src=wsgi.apache2.vhost.j2
+            dest=/etc/apache2/sites-enabled/000-default.conf
+            owner=root
+            group=root
+  tags:
+    - initial
+    - configs
+  notify: apache restart

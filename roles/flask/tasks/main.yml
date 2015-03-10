@@ -1,0 +1,16 @@
+---
+
+- name: install flask
+  raw: cd {{ git_dest }} && virtualenv flask
+  sudo: yes
+  sudo_user: "{{ username }}"
+  tags:
+    - flask
+
+- name: install required files
+  pip: requirements={{ git_dest }}/requirements.txt
+       virtualenv={{ git_dest }}/flask
+  sudo: yes
+  sudo_user: "{{ username }}"
+  tags:
+    - flask

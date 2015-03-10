@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    WSGIDaemonProcess app user={{ username }} group={{ username }} threads=5
+    WSGIScriptAlias / /home/{{ username }}/application/app.wsgi
+
+    <Directory /home/{{ username }}/application>
+        WSGIProcessGroup app
+        WSGIApplicationGroup %{GLOBAL}
+#Order deny,allow
+        Require all granted
+#Allow from all
+        Options All
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/{{ username }}.error.log
+    CustomLog ${APACHE_LOG_DIR}/{{ username }}.access.log combined
+</VirtualHost>
